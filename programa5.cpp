@@ -33,5 +33,7 @@ int main()
 		}
 	}
 
+	cout << contador;
+
 	return 0;
 }
