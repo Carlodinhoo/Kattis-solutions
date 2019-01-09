@@ -5,9 +5,9 @@ public class Game{
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[4];
 		List<Integer> lista = new ArrayList<Integer>();
-		lista.add(0);
 		lista.add(2);
 		lista.add(4);
+		lista.add(8);
 		lista.add(16);
 		lista.add(32);
 		lista.add(64);
@@ -41,18 +41,34 @@ public class Game{
 	}
 
 	public static void sumaIzq(int[] arr, List lista){
+		int aux = 0;
+		int cont = 1;
+		int temp = 0;
+		int temp2 = 0;
+		int temp3 = 0;
 		for(int i = 0; i < arr.length; i++){
 			if(arr[i] != 0){
 				for(int j = i+1; j < arr.length; j++){
 					if(arr[j] == 0){
 						continue;
 					}else{
-						int temp = arr[i] + arr[j];
-						if(lista.contains(temp)){
+						temp = arr[i] + arr[j];
+						if(lista.contains(temp) ){
 							arr[i] += arr[j];
 							arr[j] = 0;
+							break;
 						}
 					}
+				}
+			}
+		}
+
+		for(int i = 0; i < arr.length-1; i++){
+			for(int j = i+1; j < arr.length; j++){
+				if(arr[i] == 0 && arr[j] != 0){
+					aux = arr[j];
+					arr[j] = arr[i];
+					arr[i] = aux;
 				}
 			}
 		}
