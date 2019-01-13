@@ -32,12 +32,18 @@ public class Conquest{
 					if(j+1 < tablero[i].length && tablero[i][j+1] == 0){
 						tablero[i][j+1] = 1;
 					}
-					if(j-1 < 0){
-						j = 0;
-					} 
-					if(j < tablero[i].length && tablero[i][j-1] == 0){
+
+					if(tablero[i][j-1] < tablero[i].length && tablero[i][j-1] == 0){
 						tablero[i][j-1] = 1;
 					}
+					if(i+1 < tablero[i].length && tablero[i+1][j] == 0){
+						tablero[i+1][j] = 1;
+					}
+
+					if(i-1 < tablero[i].length && tablero[i-1][j] == 0){
+						tablero[i-1][j] = 1;
+					}
+
 					cont--;
 				}
 			}
