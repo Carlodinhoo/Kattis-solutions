@@ -46,33 +46,16 @@ public class Ptice{
 				puntajeG++;
 			}
 		}
-
-		if(puntajeA > puntajeB && puntajeA > puntajeG){
-			System.out.println(puntajeA);
+		int max = Math.max(puntajeA, Math.max(puntajeB, puntajeG));
+		System.out.println(max);
+		if(puntajeA == max){
 			System.out.println("Adrian");
-		}else if(puntajeB > puntajeA && puntajeB > puntajeG){
-			System.out.println(puntajeB);
+		}
+		if(puntajeB == max){
 			System.out.println("Bruno");
-		}else if(puntajeG > puntajeA && puntajeG > puntajeB){
-			System.out.println(puntajeG);
-			System.out.println("Goram");	
-		}else if(puntajeA == puntajeB && puntajeA != puntajeG){
-			System.out.println(puntajeA);
-			System.out.println("Adrian");
-			System.out.println("Bruno");
-		}else if(puntajeA == puntajeG && puntajeA != puntajeB){
-			System.out.println(puntajeA);
-			System.out.println("Adrian");
-			System.out.println("Goram");
-		}else if (puntajeB == puntajeG && puntajeB != puntajeA){
-			System.out.println(puntajeB);
-			System.out.println("Bruno");
-			System.out.println("Goram");
-		}else{
-			System.out.println(puntajeA);
-			System.out.println("Adrian");
-			System.out.println("Bruno");
-			System.out.println("Goram");
+		}
+		if(puntajeG == max){
+			System.out.println("Goran");
 		}
 	}
 }
