@@ -22,7 +22,7 @@ public class Exam{
 		if(n < same){
 			ans = n + dif;
 		}else{
-			ans = dif - n;
+			ans = myanswers.length() - (n - same);
 		}
 
 		System.out.println(ans);
